@@ -135,14 +135,16 @@ jQuery(function ($) {
 		create: function (e) {
 			var $input = $(e.target);
 			var val = $input.val().trim();
-
+			
+			var video_id_list = val.split("=");
+			
 			if (e.which !== ENTER_KEY || !val) {
 				return;
 			}
 
 			this.todos.push({
 				id: util.uuid(),
-				title: val,
+				title: 'http://img.youtube.com/vi/' + video_id_list[1] +  '/default.jpg',
 				completed: false
 			});
 
